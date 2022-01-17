@@ -1,0 +1,16 @@
+{% extends "layout.html" %} {% block content %}
+<div class="container">
+  <h1>CodeWithPrince</h1>
+</div>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+  var graphs1 = {{ graph1JSON | safe}};
+  Plotly.plot("chart1", graphs1,{})
+  var graphs2 = {{ graph2JSON | safe}};
+  Plotly.plot("chart2", graphs2,{})
+  var graphs3 = {{ graph3JSON | safe}};
+  Plotly.plot("chart3", graphs3,{});
+</script>
+
+{% endblock %}
